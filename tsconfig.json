@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowUmdGlobalAccess": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx"
+  },
+  "exclude": [
+    "node_modules", ".parcel-cache", "dist"
+  ]
+}

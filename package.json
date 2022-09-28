@@ -2,8 +2,8 @@
   "name": "trello",
   "version": "1.0.0",
   "description": "Adam's fake Trello Clone",
-  "main": "index.tsx",
   "scripts": {
+    "clean": "rm -R .parcel-cache dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel client/index.html --open"
   },
@@ -23,6 +23,9 @@
     "react-router-dom": "^6.4.1"
   },
   "devDependencies": {
+    "@types/jest": "^29.0.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "eslint": "^8.24.0",
@@ -31,6 +34,8 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "typescript": "^4.8.4"
   }
 }
