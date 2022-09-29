@@ -1,13 +1,9 @@
-
-
 type Props = {}
 
 export const Button = (props: Props) => {
-
-  const string = 'string'
-
+  const string = 'string';
 
   return (
-    <button>My Great Button</button>
-  )
-}
+    <button type="button">My Great Button</button>
+  );
+};

@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Button } from '../Components';
 
-export const App = () => {
-  const my = 'this';
+export function App() {
+  const arr = [];
 
-  return (
-    <div>
-      <Button />
-    </div>
-  )
-};
+  const str = 'str';
+
+  return <div><Button /></div>;
+}
