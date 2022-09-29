@@ -28,6 +28,8 @@
         "react/jsx-filename-extension": [1, { "extensions": [ ".js", ".jsx", ".ts", ".tsx" ]}],
         "import/extensions": [ "error", "never" ],
         "import/no-unresolved": [ 0 ],
-        "react/function-component-definition": [ 0 ]
+        "react/function-component-definition": [ 0 ],
+        "object-curly-spacing": [ "warn", "always" ],
+        "array-bracket-spacing": [ "warn", "always" ]
     }
 }

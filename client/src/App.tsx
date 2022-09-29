@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Button } from '../Components';
 
-export function App() {
-  const arr = [];
+export const App = () => {
+  const arr = [ 1, 2, 3 ];
 
   const str = 'str';
 
   return <div><Button /></div>;
-}
+};
