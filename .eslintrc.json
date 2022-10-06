@@ -6,6 +6,8 @@
     "extends": [
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
+        // "plugin:import/errors",
+        "plugin:jsx-a11y/recommended",
         "airbnb"
     ],
     "parser": "@typescript-eslint/parser",
@@ -30,6 +32,11 @@
         "import/no-unresolved": [ 0 ],
         "react/function-component-definition": [ 0 ],
         "object-curly-spacing": [ "warn", "always" ],
-        "array-bracket-spacing": [ "warn", "always" ]
+        "array-bracket-spacing": [ "warn", "always" ],
+        "no-multiple-empty-lines": ["off"],
+        "no-trailing-spaces": ["off"],
+        "arrow-body-style": ["off", "as-needed"],
+        "padded-blocks": ["off"],
+        "no-param-reassign": "off"
     }
 }
