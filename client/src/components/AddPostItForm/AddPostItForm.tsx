@@ -1,4 +1,4 @@
-import React, {
+import {
   useState, memo, FormEvent, ChangeEvent, 
 } from 'react';
 import { BoardState, SetBoardState } from '../../types';
@@ -18,7 +18,10 @@ export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
   };
 
   return (
-    <div style={{
+    <header style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
       top: '0px',
       right: '0px',
       left: '0px',
@@ -26,42 +29,40 @@ export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
       // border: '2px solid black',
       height: '5rem',
       backgroundColor: 'lightblue',
-      position: 'fixed',
+      position: 'relative',
     }}
     >
       <form
         style={{
-          position: 'absolute', right: '0px', marginRight: '1rem', 
+          marginRight: '1rem', 
         }}
         onSubmit={submitHandler}
       >
-        <label htmlFor="new-post-it">
-          Create Post it!
-          <br />
-          <input
-            required
-            style={{
-              marginRight: '.5rem', borderRadius: '1rem', padding: '.5rem', border: 'solid 1px blue', 
-            }}
-            type="text"
-            name="newHeader"
-            id="newHeader"
-            value={header}
-            placeholder="new post it here..."
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setHeader(e.target.value)}
-          />
-        </label>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label htmlFor="newHeader">Create Post it! </label>
+        <input
+          required
+          style={{
+            marginRight: '.5rem', borderRadius: '4px', padding: '.3rem', border: 'solid 1px blue', textIndent: '2px',
+          }}
+          type="text"
+          name="newHeader"
+          id="newHeader"
+          value={header}
+          placeholder="new post it here..."
+          onChange={(e) => setHeader(e.target.value)}
+        />
+        
         <button
           type="submit"
           style={{
-            padding: '.5rem', borderRadius: '1rem', border: 'blue solid 1px', backgroundColor: 'lightblue', 
+            padding: '.3rem .7rem .3rem .7rem', borderRadius: '4px', border: 'blue solid 1px', backgroundColor: 'lightblue', 
           }}
         >
           Create
-
         </button>
       </form>
-    </div>
+    </header>
   );
 });
 

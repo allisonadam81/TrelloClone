@@ -10,12 +10,12 @@ type TrelloBoardProps = {
 export const TrelloBoard = ({ boardState, setBoardState }: TrelloBoardProps) => {
 
   return (
-    <div>
-      {boardState.map((postIt: PostIt, i: number) => (
+    <div style={{ display: 'flex', border: 'solid 2px black' }}>
+      {boardState.map((postIt: PostIt, postItIndex: number) => (
         <PostItCard
           setBoardState={setBoardState}
           postIt={postIt}
-          i={i}
+          postItIndex={postItIndex}
         />
       ))}
     </div>

@@ -11,7 +11,7 @@ export const App = () => {
   return (
     // Add Post It Form
     // Board Container
-    <div className="app">
+    <div className="app" style={{ display: 'flex', flexDirection: 'column' }}>
       <AddPostItForm setBoardState={setBoardState} />
       <TrelloBoard setBoardState={setBoardState} boardState={boardState} />
     </div>
