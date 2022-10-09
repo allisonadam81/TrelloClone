@@ -1,4 +1,3 @@
-
 import { PostItCard } from '../Components';
 import { BoardState, SetBoardState, PostIt } from '../../types';
 
@@ -13,6 +12,8 @@ export const TrelloBoard = ({ boardState, setBoardState }: TrelloBoardProps) => 
     <div style={{ display: 'flex', border: 'solid 2px black' }}>
       {boardState.map((postIt: PostIt, postItIndex: number) => (
         <PostItCard
+          // eslint-disable-next-line react/no-array-index-key
+          key={`postItCard-${postItIndex}`}
           setBoardState={setBoardState}
           postIt={postIt}
           postItIndex={postItIndex}

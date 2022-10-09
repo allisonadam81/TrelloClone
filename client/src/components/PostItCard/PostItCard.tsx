@@ -16,16 +16,16 @@ export const PostItCard = memo((
 ) => {
 
   const postItId = useId();
-
+  
   return (
     <div key={`PostItId${postItId}`}>
-      <Header header={header} />
+      <Header header={header} key={`Header-${postItId}`} />
       <ItemCardContainer
         postItIndex={postItIndex}
         postItChildren={postItChildren}
         setBoardState={setBoardState}
       />
-      <AddItemForm postItIndex={postItIndex} setBoardState={setBoardState} />
+      <AddItemForm key={`AddItemForm-${postItId}`} postItIndex={postItIndex} setBoardState={setBoardState} />
     </div>
   );
 });

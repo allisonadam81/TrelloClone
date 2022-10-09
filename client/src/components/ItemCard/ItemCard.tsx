@@ -6,29 +6,24 @@ import {
 type ItemCardProps = {
   item: string,
   postItIndex: number,
-  idx: number,
+  itemIndex: number,
   setBoardState: SetBoardState
 }
 
 export const ItemCard = ({
-  postItIndex, idx, item, setBoardState, 
+  postItIndex, itemIndex, item, setBoardState, 
 }: ItemCardProps) => {
-
-  const itemCardId = useId();
-
-  console.log(postItIndex);
   
   const handleClick = (nextPostIt: number) => {
     return (e) => {
       e.preventDefault();
       setBoardState((prevBoard: BoardState) => {
         // if I'm at the beginning or end, then treat array like circle.
-        console.log('PREVBOARD', prevBoard, 'postItIndex', postItIndex, 'item', item);
         if (nextPostIt >= prevBoard.length) nextPostIt = 0;
         if (nextPostIt < 0) nextPostIt = prevBoard.length - 1;
-        console.log('next!!!', nextPostIt);
-        const newBoard: BoardState = [ ...prevBoard ];
-        const movedItem: string[] = newBoard[postItIndex].postItChildren.splice(idx, 1);
+
+        const newBoard: BoardState = JSON.parse(JSON.stringify(prevBoard));
+        const movedItem: string[] = newBoard[postItIndex].postItChildren.splice(itemIndex, 1);
 
         newBoard[nextPostIt].postItChildren.push(...movedItem);
 
@@ -38,7 +33,7 @@ export const ItemCard = ({
   };
 
   return (
-    <div key={`ItemCard - ${itemCardId}`}>
+    <div>
       <p>{item}</p>
       <button type="button" onClick={handleClick(postItIndex - 1)}>Move Left</button>
       <button type="button" onClick={handleClick(postItIndex + 1)}>Move Right</button>

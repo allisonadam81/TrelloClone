@@ -13,7 +13,7 @@ export const AddItemForm = memo(({ postItIndex, setBoardState }: AddItemFormProp
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     setBoardState((prevBoard) => {
-      const newBoard = [ ...prevBoard ];
+      const newBoard = JSON.parse(JSON.stringify(prevBoard));
       newBoard[postItIndex].postItChildren.push(newItem);
       return newBoard;
     });
@@ -28,6 +28,7 @@ export const AddItemForm = memo(({ postItIndex, setBoardState }: AddItemFormProp
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="addItemInput">Add Item!</label>
         <input
+          required
           onChange={(e) => setNewItem(e.target.value)}
           value={newItem}
           name="addItemInput"

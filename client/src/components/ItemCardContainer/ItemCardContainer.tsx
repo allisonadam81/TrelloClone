@@ -1,5 +1,5 @@
+import { useId } from 'react';
 import { ItemCard } from '../Components';
-
 import { SetBoardState, PostItChildren } from '../../types';
 
 type ItemCardContainerProps = {
@@ -11,10 +11,19 @@ type ItemCardContainerProps = {
 export const ItemCardContainer = ({
   postItIndex, postItChildren, setBoardState,
 }: ItemCardContainerProps) => {
+  const itemContainerId = useId();
+
   return (
     <div>
-      {postItChildren.map((item: string, idx: number) => (
-        <ItemCard idx={idx} item={item} postItIndex={postItIndex} setBoardState={setBoardState} />
+      {postItChildren.map((item: string, itemIndex: number) => (
+        <ItemCard
+          // eslint-disable-next-line react/no-array-index-key
+          key={`itemCard${itemIndex} - ${itemContainerId}`}
+          itemIndex={itemIndex}
+          item={item}
+          postItIndex={postItIndex}
+          setBoardState={setBoardState}
+        />
       ))}
     </div>
   );

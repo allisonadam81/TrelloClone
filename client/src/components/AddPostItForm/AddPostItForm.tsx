@@ -1,5 +1,5 @@
 import {
-  useState, memo, FormEvent, ChangeEvent, 
+  useState, memo, FormEvent,
 } from 'react';
 import { BoardState, SetBoardState } from '../../types';
 
@@ -13,7 +13,8 @@ export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    setBoardState((prevBoard: BoardState) => [ ...prevBoard, { header, postItChildren: [] } ]);
+    setBoardState((prevBoard: BoardState) => (
+      [ ...JSON.parse(JSON.stringify(prevBoard)), { header, postItChildren: [] } ]));
     setHeader('');
   };
 
