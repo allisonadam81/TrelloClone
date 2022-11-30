@@ -1,13 +1,12 @@
-import {
-  useState, memo, FormEvent,
-} from 'react';
+import { useState, FormEvent } from 'react';
 import { BoardState, SetBoardState } from '../../types';
+import * as styles from './PostItForm.module.css';
 
 type FormProps = {
   setBoardState: SetBoardState
 }
 
-export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
+export const AddPostItForm = ({ setBoardState }: FormProps) => {
 
   const [ header, setHeader ] = useState('');
 
@@ -57,7 +56,7 @@ export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
         <button
           type="submit"
           style={{
-            padding: '.3rem .7rem .3rem .7rem', borderRadius: '4px', border: 'blue solid 1px', backgroundColor: 'lightblue', 
+            ...styles.button, 
           }}
         >
           Create
@@ -65,5 +64,5 @@ export const AddPostItForm = memo(({ setBoardState }: FormProps) => {
       </form>
     </header>
   );
-});
+};
 

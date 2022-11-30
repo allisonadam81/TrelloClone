@@ -1,0 +1,12 @@
+button {
+  padding: .3rem .7rem .3rem .7rem;
+  border-radius: 4px;
+  border: blue solid 1px;
+  background-color: lightblue;
+}
+
+button:hover {
+  background-color: pink;
+  transition: all;
+  transition-duration: 1s;
+}

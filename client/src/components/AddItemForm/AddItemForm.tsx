@@ -1,4 +1,4 @@
-import { useState, memo, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { SetBoardState } from '../../types';
 
 type AddItemFormProps = {
@@ -6,7 +6,7 @@ type AddItemFormProps = {
   setBoardState: SetBoardState
 }
 
-export const AddItemForm = memo(({ postItIndex, setBoardState }: AddItemFormProps) => {
+export const AddItemForm = ({ postItIndex, setBoardState }: AddItemFormProps) => {
 
   const [ newItem, setNewItem ] = useState('');
 
@@ -21,7 +21,7 @@ export const AddItemForm = memo(({ postItIndex, setBoardState }: AddItemFormProp
   };
 
   return (
-    <div>
+    <div style={{ padding: '1rem' }}>
       <form
         onSubmit={submitHandler}
       >
@@ -39,6 +39,6 @@ export const AddItemForm = memo(({ postItIndex, setBoardState }: AddItemFormProp
       </form>
     </div>
   );
-});
+};
 
 

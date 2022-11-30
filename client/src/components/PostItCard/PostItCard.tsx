@@ -9,16 +9,16 @@ type PostItProps = {
   postIt: PostIt
 }
 
-export const PostItCard = memo((
+export const PostItCard = (
   {
     postItIndex, setBoardState, postIt: { header, postItChildren }, 
   }: PostItProps,
 ) => {
-
+  // console.log('post it card rendered ', postItIndex, postItChildren);
   const postItId = useId();
   
   return (
-    <div key={`PostItId${postItId}`}>
+    <div key={`PostItId${postItId}`} style={{ border: 'solid 2px black', padding: '1rem' }}>
       <Header header={header} key={`Header-${postItId}`} />
       <ItemCardContainer
         postItIndex={postItIndex}
@@ -28,4 +28,4 @@ export const PostItCard = memo((
       <AddItemForm key={`AddItemForm-${postItId}`} postItIndex={postItIndex} setBoardState={setBoardState} />
     </div>
   );
-});
+};

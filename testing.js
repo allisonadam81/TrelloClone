@@ -1,6 +1,5 @@
 const myArray = [];
 myArray.map((el) => {
-  console.log(el);
   return el + 1;
 });
 

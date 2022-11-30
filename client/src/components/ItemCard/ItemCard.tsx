@@ -1,7 +1,5 @@
-import { useId } from 'react';
-import {
-  SetBoardState, BoardState, PostIt, PostItChildren, 
-} from '../../types';
+import React from 'react';
+import { SetBoardState, BoardState } from '../../types';
 
 type ItemCardProps = {
   item: string,
@@ -13,7 +11,6 @@ type ItemCardProps = {
 export const ItemCard = ({
   postItIndex, itemIndex, item, setBoardState, 
 }: ItemCardProps) => {
-  
   const handleClick = (nextPostIt: number) => {
     return (e) => {
       e.preventDefault();
@@ -32,11 +29,20 @@ export const ItemCard = ({
     };
   };
 
+
   return (
-    <div>
+    <div style={{ border: 'solid 2px lightblue', padding: '.5rem', margin: '.5rem' }}>
       <p>{item}</p>
-      <button type="button" onClick={handleClick(postItIndex - 1)}>Move Left</button>
-      <button type="button" onClick={handleClick(postItIndex + 1)}>Move Right</button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <button type="button" onClick={handleClick(postItIndex - 1)}>Move Left</button>
+        <button type="button" onClick={handleClick(postItIndex + 1)}>Move Right</button>
+      </div>
     </div>
+  // <div style={{ border: 'solid 2px lightblue', padding: '.5rem', margin: '.5rem' }}>
+  //   <p>{item}</p>
+  //   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  //     <button type="button" onClick={handleClick(postItIndex + 1)}>Submit</button>
+  //   </div>
+  // </div>
   );
 };

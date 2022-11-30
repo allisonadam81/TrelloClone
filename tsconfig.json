@@ -3,7 +3,9 @@
     // "allowUmdGlobalAccess": true,
     // "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "classic",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "exclude": [
     "node_modules", ".parcel-cache", "dist"
