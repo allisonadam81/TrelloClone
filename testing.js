@@ -8,3 +8,14 @@ for (let i = 0; i < 4; i++) {
   const mystring = 'here is a test';
   myArray.push(mystring);
 }
+
+
+
+
+const myObj = {
+  firstKey: {
+    data: 1,
+    otherData: 0,
+  },
+  secondKey: 3,
+};

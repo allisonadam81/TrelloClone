@@ -37,6 +37,8 @@
         "no-trailing-spaces": ["off"],
         "arrow-body-style": ["off", "as-needed"],
         "padded-blocks": ["off"],
-        "no-param-reassign": "off"
+        "no-param-reassign": "off",
+        "react/jsx-props-no-spreading": "off"
+        }
     }
-}
+
