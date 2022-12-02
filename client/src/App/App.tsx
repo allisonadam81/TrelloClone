@@ -1,6 +1,7 @@
 import { useState, StrictMode } from 'react';
-import { AddPostItForm, TrelloBoard } from '../Components';
-import { BoardState } from '../../types';
+import { TrelloBoard } from '../ProprietaryComponents';
+import { BoardState } from '../types';
+import { TrelloHeader } from '../TrelloHeader/TrelloHeader';
 
 
 export const App = () => {
@@ -10,7 +11,7 @@ export const App = () => {
   return (
     <StrictMode>
       <div className="app" style={{ display: 'flex', flexDirection: 'column' }}>
-        <AddPostItForm setBoardState={setBoardState} />
+        <TrelloHeader setBoardState={setBoardState} />
         <TrelloBoard setBoardState={setBoardState} boardState={boardState} />
       </div>
     </StrictMode>

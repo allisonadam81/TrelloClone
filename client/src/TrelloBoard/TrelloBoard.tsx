@@ -1,5 +1,5 @@
-import { PostItCard } from '../Components';
-import { BoardState, SetBoardState, PostIt } from '../../types';
+import { PostItCard } from '../ProprietaryComponents';
+import { BoardState, SetBoardState, PostIt } from '../types';
 
 type TrelloBoardProps = {
   boardState: BoardState,
@@ -7,7 +7,7 @@ type TrelloBoardProps = {
 }
 
 export const TrelloBoard = ({ boardState, setBoardState }: TrelloBoardProps) => {
-
+  console.log('BOARD STATE ', boardState);
   return (
     <div style={{ display: 'flex', border: 'solid 2px black' }}>
       {boardState.map((postIt: PostIt, postItIndex: number) => (

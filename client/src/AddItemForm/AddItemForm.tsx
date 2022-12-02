@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { SetBoardState } from '../../types';
+import { SetBoardState } from '../types';
 
 type AddItemFormProps = {
   postItIndex: number,

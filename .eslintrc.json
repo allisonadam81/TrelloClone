@@ -38,7 +38,9 @@
         "arrow-body-style": ["off", "as-needed"],
         "padded-blocks": ["off"],
         "no-param-reassign": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "max-len": "off",
+        "object-curly-newline":"off"
         }
     }
 

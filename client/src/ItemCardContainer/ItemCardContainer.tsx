@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import { ItemCard } from '../Components';
+import { ItemCard } from '../ProprietaryComponents';
 import { SetBoardState, PostItChildren } from '../../types';
 
 type ItemCardContainerProps = {
