@@ -1,5 +1,6 @@
 
 type FormInputProps = {
+  HTMLOptions: any,
   id: string,
   label: string,
   name: string,
@@ -7,12 +8,11 @@ type FormInputProps = {
   placeholder: string,
   type: string,
   value: string,
-  // eslint-disable-next-line react/require-default-props
-  vertical?: boolean,
+  vertical: boolean,
 }
 
 const style = {
-  marginRight: '.5rem',
+  margin: '.5em',
   borderRadius: '4px',
   padding: '.3rem',
   border: 'solid 1px blue',
@@ -20,11 +20,11 @@ const style = {
 };
 
 export const FormInput = ({
+  HTMLOptions,
   id,
   label,
   name,
   onChange,
-  placeholder,
   type,
   value,
   vertical,
@@ -37,10 +37,10 @@ export const FormInput = ({
         id={id}
         name={name}
         onChange={onChange}
-        placeholder={placeholder}
         type={type}
         value={value}
         style={style}
+        {...HTMLOptions}
       />
     </>
   );
