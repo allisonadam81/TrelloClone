@@ -24,6 +24,7 @@ export const formatForm = (config) => {
   }, {});
 };
 
+
 export const formChangeHandler = (setter) => {
   return (e) => {
     return setter((prevState) => {
@@ -69,6 +70,7 @@ export const chooseInputType = (inputConfig, form, setForm) => {
           label={label}
           name={name}
           onChange={formChangeHandler(setForm)}
+          options={options}
           type={type}
           value={form[name]}
           vertical={vertical}

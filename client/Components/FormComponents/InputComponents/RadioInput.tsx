@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props = {}
+type Props = {};
 
 export const RadioInput = (props: Props) => {
   return (
