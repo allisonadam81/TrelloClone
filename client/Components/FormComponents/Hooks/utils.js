@@ -33,6 +33,15 @@ export const formChangeHandler = (setter) => {
   };
 };
 
+
+/*
+    TO DO
+    NEED TO CHECK AND ADD FUNCTIONALITY FOR NON TEXT OPTIONS.
+    BUILD OUT HTML DEFAULTS
+    BUILD OUT STYLING DEFAULTS
+    BUILD OUT VALIDATION
+*/
+
 export const chooseInputType = (inputConfig, form, setForm) => {
   const { name, label, type, id, HTMLOptions, style, vertical, options } = inputConfig;
   switch (type) {

@@ -24,17 +24,7 @@ const style = {
 };
 
 export const FormInput = (props: FormInputProps) => {
-  // {
-  //   HTMLOptions,
-  //   id,
-  //   label,
-  //   name,
-  //   onChange,
-  //   options,
-  //   type,
-  //   value,
-  //   vertical,
-  // }: FormInputProps,
+
   const { type } = props;
   
   const obj = {
