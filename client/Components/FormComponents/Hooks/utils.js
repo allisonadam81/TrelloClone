@@ -1,0 +1,103 @@
+import { CheckboxInput, RadioInput, TextInput, SelectInput } from '../InputComponents/Components';
+
+
+export const formatForm = (config) => {
+  return config.reduce((accumulator, current) => {
+    const { type, name } = current;
+    switch (type) {
+      case 'text' || 'select' || 'radio': {
+        accumulator[name] = '';
+        return accumulator;
+      }
+      case 'checkbox' : {
+        accumulator[name] = false;
+        return accumulator;
+      }
+      case 'number' : {
+        accumulator[name] = 0;
+        return accumulator;
+      }
+      default : {
+        throw Error(`${type} not compatible. Please put in a compatible type for ${name}`);
+      }
+    }
+  }, {});
+};
+
+export const formChangeHandler = (setter) => {
+  return (e) => {
+    return setter((prevState) => {
+      const { checked, name, value, type } = e.target;
+      return { ...prevState, [name]: (type === 'checkbox' ? checked : value) };
+    });
+  };
+};
+
+export const chooseInputType = (inputConfig, form, setForm) => {
+  const { name, label, type, id, HTMLOptions, style, vertical, options } = inputConfig;
+  switch (type) {
+    case 'text' : {
+      return (
+        <TextInput
+          HTMLOptions={HTMLOptions}
+          id={id || name}
+          key={name}
+          label={label}
+          name={name}
+          onChange={formChangeHandler(setForm)}
+          type={type}
+          value={form[name]}
+          vertical={vertical}
+        />
+      );
+    }
+    case 'select' : {
+      return (
+        <SelectInput
+          HTMLOptions={HTMLOptions}
+          id={id || name}
+          key={name}
+          label={label}
+          name={name}
+          onChange={formChangeHandler(setForm)}
+          type={type}
+          value={form[name]}
+          vertical={vertical}
+        />
+      );
+    }
+    case 'radio' : {
+      return (
+        <RadioInput
+          HTMLOptions={HTMLOptions}
+          id={id || name}
+          key={name}
+          label={label}
+          name={name}
+          onChange={formChangeHandler(setForm)}
+          type={type}
+          value={form[name]}
+          vertical={vertical}
+        />
+      );
+    }
+    case 'checkbox' : {
+      return (
+        <CheckboxInput
+          HTMLOptions={HTMLOptions}
+          id={id || name}
+          key={name}
+          label={label}
+          name={name}
+          onChange={formChangeHandler(setForm)}
+          type={type}
+          value={form[name]}
+          vertical={vertical}
+        />
+      );
+    }
+    default : {
+      throw new Error('this does not work');
+    }
+  }
+};

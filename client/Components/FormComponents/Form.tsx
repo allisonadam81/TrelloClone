@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 
-import { useForm } from './useForm';
+import { useForm } from './Components';
 
 type FormProps = {
   config: any[],
@@ -15,7 +15,7 @@ export const Form = ({ config, onSubmit }: FormProps) => {
   return (
     <div style={{ margin: '1em' }}>
       <form 
-        style={{ border: '2px solid black' }}
+        // style={{ border: '2px solid black' }}
         onSubmit={(e) => {
           formSubmit(e);
           resetForm();

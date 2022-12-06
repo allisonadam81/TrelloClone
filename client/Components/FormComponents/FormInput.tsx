@@ -1,3 +1,6 @@
+import { CheckboxInput, RadioInput, SelectInput, TextInput } from './InputComponents/Components';
+
+
 
 type FormInputProps = {
   HTMLOptions: any,
@@ -5,7 +8,8 @@ type FormInputProps = {
   label: string,
   name: string,
   onChange: () => void,
-  placeholder: string,
+  // eslint-disable-next-line react/require-default-props
+  options?: string[],
   type: string,
   value: string,
   vertical: boolean,
@@ -19,29 +23,30 @@ const style = {
   textIndent: '2px',
 };
 
-export const FormInput = ({
-  HTMLOptions,
-  id,
-  label,
-  name,
-  onChange,
-  type,
-  value,
-  vertical,
-}: FormInputProps) => {
+export const FormInput = (props: FormInputProps) => {
+  // {
+  //   HTMLOptions,
+  //   id,
+  //   label,
+  //   name,
+  //   onChange,
+  //   options,
+  //   type,
+  //   value,
+  //   vertical,
+  // }: FormInputProps,
+  const { type } = props;
+  
+  const obj = {
+    checkbox: <CheckboxInput {...props} />,
+    text: <TextInput {...props} />,
+    radio: <RadioInput {...props} />,
+    select: <SelectInput {...props} />,
+  };
+  
   return (
-    <>
-      <label htmlFor={name}>{label}</label>
-      {vertical ? <br /> : null}
-      <input
-        id={id}
-        name={name}
-        onChange={onChange}
-        type={type}
-        value={value}
-        style={style}
-        {...HTMLOptions}
-      />
-    </>
+    <div>
+      {obj[type]}
+    </div>
   );
 };
