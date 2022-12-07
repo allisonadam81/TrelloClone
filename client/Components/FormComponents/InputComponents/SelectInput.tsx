@@ -30,7 +30,7 @@ export const SelectInput = ({
   return (
     <div>
       <label htmlFor={name}>
-        {label}
+        {label || `${name[0].toUpperCase()}${name.slice}:`}
         {vertical ? <br /> : null}
         <select id={id} name={name} onChange={onChange} onBlur={onChange} value={value} {...HTMLOptions}>
           <option key="invalid" value="">-- please choose an option --</option>

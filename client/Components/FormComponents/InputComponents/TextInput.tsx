@@ -24,7 +24,7 @@ export const TextInput = ({
   return (
     <div>
       <label htmlFor={name}>
-        {label || `${name[0].toUpperCase()}${name.slice} :`}
+        {label || `${name[0].toUpperCase()}${name.slice}:`}
         {vertical ? <br /> : null}
         <input
           id={id}
