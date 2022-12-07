@@ -2,7 +2,8 @@ import React from 'react';
 
 type OptionType = {
   label: string,
-  value: string
+  value: string,
+  HTMLOptions: any,
 }
 
 type Props = {
@@ -12,8 +13,7 @@ type Props = {
   name: string,
   onChange: () => void,
   options: OptionType[],
-  type: 'text' | 'number',
-  value: string | number,
+  value: string,
   vertical: boolean
 }
 
@@ -33,13 +33,13 @@ export const SelectInput = ({
         {label || `${name[0].toUpperCase()}${name.slice}:`}
         {vertical ? <br /> : null}
         <select id={id} name={name} onChange={onChange} onBlur={onChange} value={value} {...HTMLOptions}>
-          <option key="invalid" value="">-- please choose an option --</option>
           {options.map((option, i) => {
             return (
               <option
                 key={`${name} - ${option.value}`}
                 label={option.label}
                 value={option.value}
+                {...option.HTMLOptions}
               />
             );
           })}

@@ -44,7 +44,7 @@ export const formChangeHandler = (setter) => {
 */
 
 export const chooseInputType = (inputConfig, form, setForm) => {
-  const { name, label, type, id, HTMLOptions, style, vertical, options } = inputConfig;
+  const { name, label, type, id, HTMLOptions, vertical, options } = inputConfig;
   switch (type) {
     case 'text' : {
       return (
