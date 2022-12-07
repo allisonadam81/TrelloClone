@@ -1,8 +1,6 @@
 
 import { useState } from 'react';
-import { FormInput } from '../Components';
-import { CheckboxInput, RadioInput, SelectInput, TextInput } from '../InputComponents/Components';
-import { formatForm, formChangeHandler, chooseInputType } from './utils';
+import { formatForm, chooseInputType } from './utils';
 
 const defaultHTMLOptions = {
   button: {
@@ -40,9 +38,7 @@ export const useForm = (config, onSubmit) => {
     return chooseInputType(inputConfig, form, setForm);
   });
     
-  const resetForm = () => setForm((prevState) => {
-    return Object.fromEntries(Object.keys(prevState).map((key) => [ key, '' ]));
-  });
+  const resetForm = () => setForm(formatForm(config));
     
   const formSubmit = onSubmit(form);
 
