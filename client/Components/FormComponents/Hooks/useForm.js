@@ -2,34 +2,6 @@
 import { useState } from 'react';
 import { formatForm, chooseInputType } from './utils';
 
-const defaultHTMLOptions = {
-  button: {
-
-  },
-  checkbox: {
-
-  },
-  color: {
-
-  },
-  data: {
-
-  },
-  datetimeLocal: {
-
-  },
-  text: {
-
-  },
-  select: {
-
-  },
-  radio: {
-
-  },
-};
-
-
 export const useForm = (config, onSubmit) => {
 
   const [ form, setForm ] = useState(() => formatForm(config));

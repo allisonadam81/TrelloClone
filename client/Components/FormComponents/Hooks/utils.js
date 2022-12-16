@@ -1,5 +1,31 @@
 import { CheckboxInput, RadioInput, TextInput, SelectInput } from '../InputComponents/Components';
 
+export const defaultHTMLOptions = {
+  button: {
+
+  },
+  checkbox: {
+
+  },
+  color: {
+
+  },
+  data: {
+
+  },
+  datetimeLocal: {
+
+  },
+  text: {
+
+  },
+  select: {
+
+  },
+  radio: {
+
+  },
+};
 
 export const formatForm = (config) => {
   return config.reduce((accumulator, current) => {
@@ -44,7 +70,8 @@ export const formChangeHandler = (setter) => {
 */
 
 export const chooseInputType = (inputConfig, form, setForm) => {
-  const { name, label, type, id, HTMLOptions, vertical, options } = inputConfig;
+  const { HTMLOptions, id, label, name, options, type, vertical } = inputConfig;
+  // const sharedProps = { HTMLOptions, id, label, name, onChange: formChangeHandler(setForm), value: form[name] };
   switch (type) {
     case 'text' : {
       return (
@@ -71,7 +98,7 @@ export const chooseInputType = (inputConfig, form, setForm) => {
           name={name}
           onChange={formChangeHandler(setForm)}
           options={options}
-          type={type}
+          // type={type}
           value={form[name]}
           vertical={vertical}
         />
@@ -102,7 +129,7 @@ export const chooseInputType = (inputConfig, form, setForm) => {
           name={name}
           onChange={formChangeHandler(setForm)}
           type={type}
-          value={form[name]}
+          checked={form[name]}
           vertical={vertical}
         />
       );
